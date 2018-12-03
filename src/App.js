@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 
 class ContactList extends React.Component {
   render() {
-    const people = [
-      { name: "Zach"},
-      { name: "Heather" },
-      { name: "Nick" },
-    ]
+    const people = this.props.contacts
 
     return <ol>
       {people.map((person) => (
@@ -20,9 +16,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <ContactList />
-        <ContactList />
-        <ContactList />
+        <ContactList contacts={[{ name: 'Zach' }, { name: 'Heather' }, { name: 'Nick' }]} />
+        <ContactList contacts={[{ name: 'Brock' }, { name: 'John' }, { name: 'Chad' }]} />
       </div>
     );
   }
